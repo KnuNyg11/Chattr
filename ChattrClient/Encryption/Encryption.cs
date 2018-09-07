@@ -28,18 +28,39 @@ namespace ChattrClient.Encryption
         public byte[] Encrypt(byte[] data)
         {
             byte[] encryptedData;
+
+            using(RijndaelManaged rm = new RijndaelManaged())
+            {
+                //ICryptoTransform encryptor = rm.CreateEncryptor()
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, null, CryptoStreamMode.Write))
+                    {
+                        cs.Write(data, 0, data.Length);
+                        encryptedData = ms.ToArray();
+                    }
+                }
+            }
             
+            return encryptedData;
+        }
+
+        public byte[] Decrypt(byte[] data)
+        {
+            byte[] encryptedData;
+
             using (MemoryStream ms = new MemoryStream(data))
             {
-                using (CryptoStream cs = new CryptoStream(ms, null, CryptoStreamMode.Write))
+                using (CryptoStream cs = new CryptoStream(ms, null, CryptoStreamMode.Read))
                 {
                     cs.Write(data, 0, data.Length);
                     encryptedData = ms.ToArray();
                 }
             }
-            
 
             return encryptedData;
         }
     }
 }
+
+//TODO Fix encryption / decryption!!!
