@@ -10,6 +10,7 @@ namespace ChattrClient.Network
 {
     class Client
     {
+        public static Client Instance { get; set; }
         public Socket Socket { get; set; }
 
         public Client()

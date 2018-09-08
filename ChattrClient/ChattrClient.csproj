@@ -56,6 +56,7 @@
     </ApplicationDefinition>
     <Compile Include="Encryption\Encryption.cs" />
     <Compile Include="Enums\ResponseType.cs" />
+    <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IMessage.cs" />
     <Compile Include="Models\ChattrUser.cs" />
     <Compile Include="Interfaces\IGroup.cs" />

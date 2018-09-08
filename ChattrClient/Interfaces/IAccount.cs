@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChattrClient.Interfaces
 {
-    interface IGroup
+    interface IAccount
     {
-        int Id { get; set; }
-        string Name { get; set; }
-        List<IUser> Users { get; set; }
     }
 }
