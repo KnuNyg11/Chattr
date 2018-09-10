@@ -1,4 +1,5 @@
-﻿using ChattrServer.Models.Packets;
+﻿using ChattrServer.Interfaces;
+using ChattrServer.Models.Packets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,24 @@ namespace ChattrServer.Network
 
         }
 
+        public void PingCallback(IPacket packet)
+        {
+
+        }
+
         public void AuthenticateUser(AuthPacket packet)
         {
 
         }
+        public void LoginUser(LoginPacket packet)
+        {
+
+        }
+        public void RegisterUser(RegisterPacket packet)
+        {
+
+        }
+
+
     }
 }

@@ -79,6 +79,11 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Packets\CreateGroupPacket.cs" />
+    <Compile Include="Models\Packets\JoinGroupPacket.cs" />
+    <Compile Include="Models\Packets\MessagePacket.cs" />
+    <Compile Include="Models\Packets\RegisterPacket.cs" />
+    <Compile Include="Models\Packets\LoginPacket.cs" />
     <Compile Include="Models\Packets\AuthPacket.cs" />
     <Compile Include="Network\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
