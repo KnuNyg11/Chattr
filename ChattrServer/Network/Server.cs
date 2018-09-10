@@ -1,4 +1,6 @@
-﻿using ChattrServer.Interfaces;
+﻿using ChattrServer.Enums;
+using ChattrServer.Interfaces;
+using ChattrServer.Models;
 using ChattrServer.Models.Packets;
 using System;
 using System.Collections.Generic;
@@ -26,10 +28,28 @@ namespace ChattrServer.Network
 
         }
 
-
-        public void PacketCallback(IAsyncResult ar)
+        public void Listen()
         {
+            Client client = new Client();
+            Socket.BeginReceive(client.Buffer, 0, client.Buffer.Length, SocketFlags.None, PacketHandlerCallback, client);
+        }
+        
+        public void PacketHandlerCallback(IAsyncResult ar)
+        {
+            Client client = (Client)ar.AsyncState;
 
+            int size = Socket.EndReceive(ar);
+            byte[] buffer = client.Buffer;
+            client.Buffer = new byte[size];
+
+            Buffer.BlockCopy(buffer, 0, client.Buffer, 0, size);
+            PacketType packet = (PacketType)BitConverter.ToInt32(client.Buffer, 0);
+
+            switch(packet)
+            {
+                case PacketType.None:
+                    break;
+            }
         }
 
         public void PingCallback(IPacket packet)
@@ -37,19 +57,31 @@ namespace ChattrServer.Network
 
         }
 
-        public void AuthenticateUser(AuthPacket packet)
+        public void AuthenticateUserCallback(AuthPacket packet)
         {
 
         }
-        public void LoginUser(LoginPacket packet)
+        public void LoginUserCallback(LoginPacket packet)
         {
 
         }
-        public void RegisterUser(RegisterPacket packet)
+        public void RegisterUserCallback(RegisterPacket packet)
         {
 
         }
 
+        public void MessageCallback(MessagePacket packet)
+        {
 
+        }
+
+        public void CreateGroupCallback(CreateGroupPacket packet)
+        {
+
+        }
+        public void JoinGroupCallback(JoinGroupPacket packet)
+        {
+
+        }
     }
 }
