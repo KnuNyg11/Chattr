@@ -62,10 +62,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enums\PacketType.cs" />
+    <Compile Include="Enums\ResponseType.cs" />
     <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IClient.cs" />
     <Compile Include="Interfaces\IGroup.cs" />
     <Compile Include="Interfaces\IMessage.cs" />
+    <Compile Include="Interfaces\IPacket.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -76,6 +79,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Packets\AuthPacket.cs" />
     <Compile Include="Network\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

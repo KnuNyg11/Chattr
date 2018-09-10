@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChattrServer.Models.Packets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -20,6 +21,17 @@ namespace ChattrServer.Network
         }
 
         public void Init()
+        {
+
+        }
+
+
+        public void PacketCallback(IAsyncResult ar)
+        {
+
+        }
+
+        public void AuthenticateUser(AuthPacket packet)
         {
 
         }
