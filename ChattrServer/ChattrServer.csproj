@@ -63,7 +63,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interfaces\IAccount.cs" />
+    <Compile Include="Interfaces\IClient.cs" />
     <Compile Include="Interfaces\IGroup.cs" />
+    <Compile Include="Interfaces\IMessage.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -71,7 +73,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ChattrGroup.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Network\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
